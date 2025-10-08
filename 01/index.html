@@ -3,13 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inrodução ao JavaScript</title>
+	<link rel="stylesheet" href="../styles.css"> 
 	<script type="text/javascript">
 		function minhafuncao (arg1, arg2){
-			alert(arg1+arg2)
+			var soma=arg1+arg2;
+			var msg='A soma é igual a ';
+			alert(msg+soma);
+		}
+		function escreve(arg){
+			document.write(arg)
 		}
 	</script>
 </head>
 <body>
-	<button onclick="minhafuncao">Clique</button>
+	<div class=box>
+		<h1>JavaScript</h1>
+		<button onclick="minhafuncao(10,20)">Clique</button>
+		<button onclick="escreve('<h1>Programação Web<h1/>')">Escreve</button>
+	</div>
 </body>
 </html>
