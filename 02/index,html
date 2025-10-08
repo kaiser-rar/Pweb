@@ -1,1 +1,49 @@
-
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercicío Javascript</title>
+	<link rel="stylesheet" href="../styles.css"> 
+</head>
+<body>
+	<div class=box>
+		<h1>Raiz Quadrada</h1>
+		<button onclick="raiz_quad(25)">Raiz de 25</button><br><br>
+		<button onclick="raiz_quad(36)">Raiz de 36</button><br><br>
+		<button onclick="raiz_quad(49)">Raiz de 49</button>
+		
+		<h1>Escrevendo na Div</h1>
+		<button onclick="escreveDiv('<h1>Pogramação Web</h1>')">Escrever</button><br>
+		<div id="minhaDiv"></div>
+		
+		<h1>Escrevendo um Texto Dinâmico</h1>
+		<button onclick="escreveDiv2()">Escrever</button><br><br>
+		<div id="minhaDiv2"></div>
+		
+		<h1>Desafio</h1>
+		<button onclick="contar()">Contar</button>
+		<div id=minhaDiv3></div>
+	</div>
+	<script type="text/javascript">
+		function raiz_quad (arg){
+			var raiz=Math.sqrt(arg);
+			alert('A raiz de '+(arg)+' é igual a '+raiz);
+		}
+		function escreveDiv(texto){
+			document.getElementById("minhaDiv").innerHTML=texto;
+		}
+		function escreveDiv2(){
+			texto=prompt('Digite algo');
+			document.getElementById("minhaDiv2").innerHTML=texto;
+		}
+		function contar(){
+			var n=parseInt(prompt('Digite um número '));
+			var texto='<br>';
+			for (var i=1;i<=n;i++){
+				texto +=i+ '<br>';
+			}
+			document.getElementById('minhaDiv3').innerHTML=texto;
+		}
+	</script>
+</body>
+</html>
