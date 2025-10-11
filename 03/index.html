@@ -8,7 +8,14 @@
 <body>
 	<div class=box>
 		<h1>Array de Linguagens</h1>
-		
+		<button onclick="mostrarLinguagens()">Criar Array de Linguagens</button><br><br>
+		<button onclick="posicaoLinguagens()">Posição de Linguagens no Array</button>
+		<div id="minhaDiv"></div>
+		<hr>
+		<h1>Array de Frutas</h1>
+		<button onclick="mostrarFrutas()">Criar Array de Frutas</button><br><br>
+		<button onclick="posicaoFrutas()">Posição de Frutas no Array</button>
+		<div id="minhaDiv2"></div>
 	</div>
 	<script type="text/javascript">
 		let linguagens=Array();
@@ -19,6 +26,39 @@
 		linguagens[4]='Perl';
 		linguagens[5]='Ruby on Rails';
 		linguagens[6]='C++';
+		
+		function mostrarLinguagens(){
+			const container=document.getElementById('minhaDiv');
+			for (var i=0; i<linguagens.length; i++){
+				var tag='<h5>'+i+' - '+linguagens[i]+'<h5>';
+				container.innerHTML+=tag;
+			} 
+		}
+		
+		function posicaoLinguagens(){
+			var indice=prompt('Qual posição da lista de linguagens deseja consultar?');
+			alert(linguagens[indice]);
+		}	
+		
+		let frutas=Array();
+		frutas[0]='Banana';
+		frutas[1]='Laranja';
+		frutas[2]='Manga';
+		frutas[3]='Maçã';
+		frutas[4]='Uva';
+		
+		function mostrarFrutas(){
+			const container=document.getElementById('minhaDiv2');
+			for (var i=0; i<frutas.length; i++){
+				var tag='<h5>'+i+' - '+frutas[i]+'<h5>';
+				container.innerHTML+=tag;
+			}
+		}
+		
+		function posicaoFrutas(){
+			var indice=prompt('Qual posição da lista de frutas deseja consultar?');
+			alert(frutas[indice]);
+		}
 	</script>
 </body>
 </html>
