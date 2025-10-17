@@ -1,1 +1,79 @@
-
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays: Push e Pop</title>
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<div class=box>
+		<h1>Lista de Pessoas</h1>
+		<button onclick="addPessoas()">Adicionar à lista</button>
+		<button onclick="posicaoLista()">Posição na lista</button>
+		<button onclick="removerPessoas()">Remover da lista</button>
+		<button onclick="limparLista()">Limpar a lista</button>
+		<button onclick="inverterLista()">Inverter a lista</button>
+		<div id="minhaDiv"></div>
+	</div>
+	<script type="text/javascript">
+		let pilhaPessoas=Array();
+		
+		function mostrarLista(){
+			const container=document.getElementById('minhaDiv');
+			container.innerHTML='';
+				for (var i=0; i<pilhaPessoas.length; i++){
+					var tag='<h5>'+i+' - '+pilhaPessoas[i]+'</h5>';
+					container.innerHTML+=tag;
+				}
+		}
+		
+		function addPessoas(){
+			var pessoa=prompt('Quem você quer adicionar?');
+			if (pessoa===null||pessoa.trim()===''){
+				alert('Insira um nome válido.');
+				return;
+			}
+			pilhaPessoas.push(pessoa);
+			mostrarLista();
+		}
+		
+		function posicaoLista(){
+			var indice=prompt('Qual posição da lista deseja consultar?');
+			indice=Number(indice);
+			if (indice<0||indice>=pilhaPessoas.length||indice===null||isNaN(indice)){
+				alert('Insira uma posição válida.');
+				return;
+			}
+			alert('Na posição '+indice+' está: '+pilhaPessoas[indice]);
+		}
+		
+		function removerPessoas(){
+			if (pilhaPessoas.length===0){
+				alert('A lista está vazia.');
+			}else{
+				let removido=pilhaPessoas.pop();
+				alert('Removido: '+removido);
+				mostrarLista();
+			}
+		}
+		
+		function limparLista(){
+			if (pilhaPessoas.length===0){
+				alert('A lista está vazia.');
+			}else{
+				pilhaPessoas=[];
+				mostrarLista();
+			}	
+		}
+		
+		function inverterLista(){
+			if (pilhaPessoas.length===0){
+				alert('A lista está vazia.');
+			}else{
+				pilhaPessoas.reverse();
+				mostrarLista();
+			}
+		}
+	</script>
+</body>
+</html>
