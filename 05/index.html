@@ -32,11 +32,10 @@
     function mostrarLista(){
 		const container = document.getElementById('minhaDiv');
 		container.innerHTML = ''; 
-
-      for (let i=0;i<listaLivros.length;i++){
-		const livro = listaLivros[i];
-		const tag='<h5>'+i+'- Título: '+livro.tit+' | Autor: '+livro.aut+' | Ano: '+livro.ano+'</h5>';
-		container.innerHTML+=tag;
+		for (let i=0;i<listaLivros.length;i++){
+			const livro = listaLivros[i];
+			const tag='<h5>'+i+'- Título: '+livro.tit+' | Autor: '+livro.aut+' | Ano: '+livro.ano+'</h5>';
+			container.innerHTML+=tag;
       }
     }
 	
